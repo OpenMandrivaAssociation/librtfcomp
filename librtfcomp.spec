@@ -11,7 +11,7 @@ License:	GPL
 Group:		System/Libraries
 URL:		http://synce.sourceforge.net/
 Source0:	http://prdownloads.sourceforge.net/synce/%{name}-%{version}.tar.bz2
-BuildRequires:	python-devel
+BuildRequires:	python-devel python-pyrex
 
 %description
 Can decompress and recompress compressed RTF and convert from 
