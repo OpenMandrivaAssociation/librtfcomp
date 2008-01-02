@@ -6,6 +6,7 @@ Release:	%mkrel 1
 %define		libname	%mklibname rtfcomp %major
 
 Summary:	Library to read and write compressed RTF files
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 License:	GPL
 Group:		System/Libraries
 URL:		http://synce.sourceforge.net/
