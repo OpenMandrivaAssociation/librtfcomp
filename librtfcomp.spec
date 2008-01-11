@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
@@ -20,6 +20,7 @@ UTF8 to RTF for use in things like the AirSync protocols
 %package -n	%{libname}
 Summary:	Main library for %{name}
 Group:		System/Libraries
+Provides:	%{name} = %{version}-%{release}
 
 %description -n	%{libname}
 Can decompress and recompress compressed RTF and convert from 
