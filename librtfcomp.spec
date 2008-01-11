@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
@@ -35,11 +35,19 @@ Provides:	%{name}-devel = %{version}-%{release}
 This package contains the headers that programmers will need to develop
 applications which will use %{name}.
 
+%package -n	python-%{libname}
+Summary:	Python bindings for %{name}
+Group:		System/Libraries
+Requires:	%{libname} = %{version}
+
+%description -n	python-%{libname}
+This package contains the python bindings for %{name}.
+
 %prep
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --program-prefix=rtfcomp-
 %make
 
 %install
@@ -57,7 +65,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_libdir}/%{name}.so.%{major}
 %{_libdir}/%{name}.so.%{major}.*
-%{py_platsitedir}/
 
 %files -n %{libname}-devel
 %defattr(-,root,root)
@@ -65,8 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/%{name}.a
 %{_libdir}/%{name}.so
 %{_libdir}/%{name}.la
-%{py_platsitedir}/*.a
-%{py_platsitedir}/*.la
-%{py_platsitedir}/*.so
 
-
+%files -n python-%{libname}
+%defattr (-,root,root)
+%{py_platsitedir}
