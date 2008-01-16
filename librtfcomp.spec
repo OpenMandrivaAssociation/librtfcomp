@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
@@ -40,6 +40,7 @@ applications which will use %{name}.
 Summary:	Python bindings for %{name}
 Group:		System/Libraries
 Requires:	%{libname} = %{version}
+Provides:	python-%{name}
 
 %description -n	python-%{libname}
 This package contains the python bindings for %{name}.
