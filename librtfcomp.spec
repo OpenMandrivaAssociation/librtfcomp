@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.1
-Release:	%mkrel 6
+Release:	%mkrel 7
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
@@ -10,12 +10,12 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 License:	GPL
 Group:		System/Libraries
 URL:		http://synce.sourceforge.net/
-Source0:	http://prdownloads.sourceforge.net/synce/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/synce/%{name}-%{version}.tar.bz2
 BuildRequires:	python-devel python-pyrex
 
 %description
 Can decompress and recompress compressed RTF and convert from 
-UTF8 to RTF for use in things like the AirSync protocols
+UTF8 to RTF for use in things like the AirSync protocols.
 
 %package -n	%{libname}
 Summary:	Main library for %{name}
