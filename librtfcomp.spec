@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.1
-Release:	%mkrel 7
+Release:	%mkrel 8
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
