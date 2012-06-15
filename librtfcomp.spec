@@ -1,16 +1,15 @@
 Name:		librtfcomp
-Version:	1.1
-Release:	%mkrel 8
+Version:	1.2
+Release:	1
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
 
 Summary:	Library to read and write compressed RTF files
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 License:	GPL
 Group:		System/Libraries
 URL:		http://synce.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/synce/%{name}-%{version}.tar.bz2
+Source0:	http://downloads.sourceforge.net/project/synce/SynCE/librtfcomp/%{name}-%{version}.tar.gz
 BuildRequires:	python-devel python-pyrex
 
 %description
@@ -49,36 +48,20 @@ This package contains the python bindings for %{name}.
 %setup -q
 
 %build
-%configure2_5x --program-prefix=rtfcomp-
+%configure2_5x --program-prefix=rtfcomp- \
+	       --disable-static
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
-
 %files -n %{libname}
-%defattr(-,root,root)
-%{_bindir}/*
 %{_libdir}/%{name}.so.%{major}
 %{_libdir}/%{name}.so.%{major}.*
 
 %files -n %{libname}-devel
-%defattr(-,root,root)
 %{_includedir}/rtfcomp/*.h
-%{_libdir}/%{name}.a
 %{_libdir}/%{name}.so
-%{_libdir}/%{name}.la
 
 %files -n python-%{libname}
-%defattr (-,root,root)
 %{py_platsitedir}
