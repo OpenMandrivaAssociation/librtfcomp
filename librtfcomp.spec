@@ -1,6 +1,6 @@
 Name:		librtfcomp
 Version:	1.2
-Release:	1
+Release:	2
 
 %define 	major 0
 %define		libname	%mklibname rtfcomp %major
