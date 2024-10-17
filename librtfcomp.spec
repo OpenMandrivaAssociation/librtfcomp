@@ -8,7 +8,7 @@ Release:	2
 Summary:	Library to read and write compressed RTF files
 License:	GPL
 Group:		System/Libraries
-URL:		http://synce.sourceforge.net/
+URL:		https://synce.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/synce/SynCE/librtfcomp/%{name}-%{version}.tar.gz
 BuildRequires:	python-devel python-pyrex
 
