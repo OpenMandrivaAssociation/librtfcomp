@@ -10,6 +10,11 @@ License:	GPL
 Group:		System/Libraries
 URL:		https://synce.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/project/synce/SynCE/librtfcomp/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	python-devel python-pyrex
 
 %description
